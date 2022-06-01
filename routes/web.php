@@ -1,6 +1,7 @@
 <?php
-
+use App\Http\Controllers\taskController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-    
-});
+Route::get('/registeruser', [taskController::class,'getdata']);
+Route::get('/registid', [taskController::class,'getid']);
+// Route::get('/', function () {
+//     return view('welcome');
+// });
