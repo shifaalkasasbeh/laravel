@@ -1,6 +1,8 @@
 @include('content.navbar')
 
 
-@yield('main-content')
+@yield('content')
+
+
 
 @include('content.footer')

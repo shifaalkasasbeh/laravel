@@ -31,11 +31,6 @@ use App\Http\Controllers\CalculatorController;
 // });
 
 
-// Route::get('/home', [show::class,'home']);
-// Route::get('/about', [show::class,'about']);
-
-
-//calculater
-
-Route::get('/calculator',[CalculatorController::class,'index']);
-
+Route::get('/home', [show::class,'home']);
+Route::get('/about', [show::class,'about']);
+Route::get('/calculator',[CalculatorController::class,'calculate']);
