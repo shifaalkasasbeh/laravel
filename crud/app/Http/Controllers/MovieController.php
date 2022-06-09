@@ -15,7 +15,7 @@ class MovieController extends Controller
      */
     public function index()
     {
-        //to redirect the user to home page for all movies 
+        //to redirect the user to home page for all movies
         $movies=Movie::latest()->paginate(5);
         return view('movies.index',compact('movies'))
         ->with('i',(request()->input('page',1)-1)*5);
@@ -30,6 +30,7 @@ class MovieController extends Controller
     {
         //to create a new movie in create page
         return view('movies.create');
+
     }
 
     /**
@@ -45,8 +46,8 @@ class MovieController extends Controller
             'movie_name'=>'required',
             'movie_description'=>'required',
         ]);
-         
-        $request->file('photo')->storeAs('public/images',$request->photo->getClientOriginalName());
+
+        $request->file('photo')->move('public/images',$request->photo->getClientOriginalName());
        // $path = $request->file('photo')->move(public_path('public/images'),$name);
         $inputs->photo= $request->photo->getClientOriginalName();
         $inputs->movie_name=$request->post('movie_name');
@@ -99,7 +100,7 @@ class MovieController extends Controller
             'movie_description'=>'required',
         ]);
 
-        $request->file('photo')->storeAs('public/images',$request->photo->getClientOriginalName());
+        $request->file('photo')->move('public/images',$request->photo->getClientOriginalName());
         //dd($request);
         // $path = $request->file('photo')->move(public_path('public/images'),$name);
 

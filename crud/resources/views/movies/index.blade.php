@@ -36,7 +36,7 @@
         <td>{{ $movie->movie_gener}}</td>
         <td>{{ $movie->movie_description}}</td>
         <td>
-           <img src="{{asset('storage/images/'.$movie->photo)}}" style="width:100px ;height:100px;">
+           <img src="{{asset('public/images/'.$movie->photo)}}" style="width:100px ;height:100px;">
         </td>
 
         <td>
